@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flores - Alba Navarro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <link rel="stylesheet" href="flores.css">
+
+</head>
+<body>
+<h1>Flores - Alba Navarro</h1>
+
+<script id="flores_template" type="text/x-handlebars-template">
+
+
+{{for data}}
+    <h3>Flor: {{:common_name}}</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Foto
+            </th>
+            <th>
+                Nombre Común
+            </th>
+            <th>
+                Nombre Científico
+            </th>
+            <th>
+                Familia
+            </th>
+            <th>
+                Sinónimos
+            </th>
+            <th>
+                Autor/a
+            </th>
+            <th>
+                Bibliografia
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            {{:id}}
+        </td>
+        <td>
+            <img src="{{:image_url}}"/>
+        </td>
+        <td>
+            {{:common_name}}
+        </td>
+        <td>
+            {{:scientific_name}}
+        </td>
+        <td>
+            {{:family}}
+        </td>
+        <td>
+            {{:synonyms}}
+        </td>
+        <td>
+            {{:author}}
+        </td>
+        <td>
+            {{:bibliography}}
+        </td>
+    </tr>
+    </tbody>
+</table>
+    {{/for}}
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.11/jsrender.min.js"></script>
+
+<div id="app"></div>
+<script>
+    $.getJSON('flowers.json', function (data){
+        let html = $("#flores_template").render(data);
+        $("#app").html(html);
+        console.log(html);
+    })
+</script>
+
+</body>
+</html>

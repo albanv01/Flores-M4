@@ -1,0 +1,31 @@
+img{
+    width: 150px;
+    height: 150px;
+
+}
+
+table, th, td {
+    border: 1px solid gray;
+    padding: 3px;
+}
+
+th{
+    background-color: pink;
+}
+
+h3{
+    font-family: "Courier New";
+    color: #FFA6C1;
+    padding: 3px;
+}
+
+body{
+    background-color: #FADDE1;
+
+}
+
+h1{
+    font-family: SansSerif;
+    color: #FF87AB;
+    padding-left: 600px;
+}
